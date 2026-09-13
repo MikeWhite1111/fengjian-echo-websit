@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { IntroOverlay } from "./IntroOverlay.jsx";
 
+const asset = `${import.meta.env.BASE_URL}assets/`;
+
 const navigation = [
   ["home", "首页"],
   ["about", "关于项目"],
@@ -15,7 +17,7 @@ const products = [
     name: "胶片投影转接装置",
     tabLabel: "胶片投影转接装置",
     statement: "让一张胶片，拥有被放大的叙事空间",
-    image: "/assets/scene-projector.png",
+    image: `${asset}scene-projector.png`,
     alt: "胶片投影转接装置向右上方投射若尔盖自然风光壁画",
     scene: "projector",
     description: "通过锥形光路适配胶片画幅，兼顾投影、展示与个性化外观，让微小画面进入更大的观看场景。",
@@ -25,7 +27,7 @@ const products = [
     name: "便携式胶片发光展示框",
     tabLabel: "便携式胶片发光展示框",
     statement: "把胶片从收藏夹，带到日常光线里",
-    image: "/assets/scene-display-frame.png",
+    image: `${asset}scene-display-frame.png`,
     alt: "略带透视的便携式胶片发光展示框点亮红色革命壁画",
     scene: "display-frame",
     description: "80 × 60 mm便携尺寸，配合多层匀光与保护结构，让胶片在不同环境中获得均匀柔和的观看体验。",
@@ -35,7 +37,7 @@ const products = [
     name: "火漆封缄主题盲盒",
     tabLabel: "火漆封缄盲盒",
     statement: "拆开的不只是礼物，也是一段文化记忆",
-    image: "/assets/scene-blind-box-mural.png",
+    image: `${asset}scene-blind-box-mural.png`,
     alt: "火漆封缄盲盒处于拆封瞬间并露出胶片与故事卡",
     scene: "blind-box",
     description: "牛皮纸信封、火漆封印与随机胶片共同构成开封仪式，连接实体收藏、主题故事卡与二维码内容。",
@@ -49,7 +51,7 @@ const stories = [
     title: "红色革命文化",
     topics: "七根火柴，金色的鱼钩，红军过草地",
     body: "从一根被珍藏的火柴、一枚弯曲的鱼钩，到草地上延伸的脚印，微小物件承载着长征途中朴素而坚定的信念。",
-    image: "/assets/story-red-army.jpg",
+    image: `${asset}story-red-army.jpg`,
     alt: "七根火柴、金色鱼钩与红军过草地题材壁画",
     position: "center center",
   },
@@ -58,7 +60,7 @@ const stories = [
     title: "藏族人文器物文化",
     topics: "藏香，哈达，经幡，玛尼石堆",
     body: "人物手中的哈达在风里舒展，把祝福、礼仪与高原生活连接起来。藏香、经幡与玛尼石让记忆落在日常器物之中。",
-    image: "/assets/story-hada.jpg",
+    image: `${asset}story-hada.jpg`,
     alt: "藏族人物手持哈达，周围有经幡、玛尼石与藏香的壁画",
     position: "38% center",
   },
@@ -67,7 +69,7 @@ const stories = [
     title: "藏族民俗活动文化",
     topics: "度炯节，秀吧疗法，河曲马，马上竞技",
     body: "从节庆仪式、藏医药油到河曲马驯育和马上竞技，民俗不是静止的标本，而是一代代人在高原生活中延续的智慧。",
-    image: "/assets/story-horses.jpg",
+    image: `${asset}story-horses.jpg`,
     alt: "河曲马奔腾与马鞍纹样壁画",
     position: "center center",
   },
@@ -76,7 +78,7 @@ const stories = [
     title: "若尔盖自然风光文化",
     topics: "黑颈鹤，草原四季，九曲黄河第一湾",
     body: "黑颈鹤掠过湿地，九曲黄河在草原上缓缓展开。自然不只是背景，也是若尔盖文化记忆持续生长的根系。",
-    image: "/assets/story-cranes.jpg",
+    image: `${asset}story-cranes.jpg`,
     alt: "黑颈鹤飞越九曲黄河与草原湿地壁画",
     position: "center center",
   },
@@ -528,8 +530,8 @@ export function App() {
             <button type="button" className="story-close" onClick={() => setVideoOpen(false)} autoFocus>关闭</button>
           </div>
           <div className="video-options">
-            <a className="button button-gold" href="/assets/ai-video-mandarin.mp4" target="_blank" rel="noreferrer">普通话版</a>
-            <a className="button button-outline-light" href="/assets/ai-video-sichuan.mp4" target="_blank" rel="noreferrer">四川话版</a>
+            <a className="button button-gold" href={`${asset}ai-video-mandarin.mp4`} target="_blank" rel="noreferrer">普通话版</a>
+            <a className="button button-outline-light" href={`${asset}ai-video-sichuan.mp4`} target="_blank" rel="noreferrer">四川话版</a>
           </div>
         </div>
       </dialog>
